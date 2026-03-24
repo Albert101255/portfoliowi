@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --ink-black: #1A1A2E;
+  --ink-red: #E8473F;
+  --ink-teal: #2D9B8A;
+  --ink-yellow: #F5C518;
+  --paper: #F5F0E8;
+  --paper-dark: #E8E0D0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink-black);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.18'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.18;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, .display {
+  font-family: 'Abril Fatface', serif;
+  line-height: 1.1;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── HALFTONE PATTERN ── */
+.halftone {
+  background-image: radial-gradient(circle, var(--ink-black) 1.5px, transparent 1.5px);
+  background-size: 6px 6px;
+  opacity: 0.08;
+}
+
+/* ── STAMP HOVER ── */
+.stamp-hover {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  cursor: pointer;
+}
+.stamp-hover:hover {
+  transform: translate(3px, 3px);
+  box-shadow: -3px -3px 0 0 var(--ink-black);
+}
+
+/* ── MISREGISTRATION ── */
+.mis-reg {
+  position: relative;
+}
+.mis-reg::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  color: var(--ink-red);
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* ── TAG / PILL ── */
+.tag {
+  display: inline-block;
+  border: 2px solid var(--ink-black);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  margin: 3px;
+  background: transparent;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--ink-black);
+}
+
+/* ── TORN PAPER DIVIDER ── */
+.torn-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.torn-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* ── FOOTER ── */
+footer.main-footer {
+  background: var(--ink-teal);
+  padding: 20px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--paper);
+  border-top: 3px solid var(--ink-black);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+}

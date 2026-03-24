@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Calculator — R. Abraham Albert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/risograph.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+<script src="../assets/js/header.js"></script>
+<script>injectHeader('projects');</script>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<section class="project-hero" style="background: var(--ink-black);">
+  <div class="project-hero-inner">
+    <div>
+      <span class="project-number-label" style="color: var(--paper); opacity:0.6;">Project 04</span>
+      <h1 class="project-hero-title" style="color: var(--paper);">Competitive Battle Calculator</h1>
+      <p class="project-hero-tagline" style="color: var(--paper); opacity: 0.7;">A precision damage calculator built on type-logic and stat modifiers</p>
+    </div>
+    <div class="project-hero-art">
+      <svg viewBox="0 0 520 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="340" fill="var(--ink-black)"/>
+        <!-- BG halftone -->
+        <circle cx="80" cy="60" r="5" fill="var(--ink-red)" opacity="0.18"/>
+        <circle cx="140" cy="120" r="4" fill="var(--ink-red)" opacity="0.15"/>
+        <circle cx="60" cy="180" r="6" fill="var(--ink-red)" opacity="0.18"/>
+        <circle cx="420" cy="50" r="4" fill="var(--ink-red)" opacity="0.15"/>
+        <circle cx="470" cy="160" r="5" fill="var(--ink-red)" opacity="0.12"/>
+        <circle cx="440" cy="280" r="3" fill="var(--ink-red)" opacity="0.15"/>
+        <!-- HP bars -->
+        <rect x="55" y="50" width="130" height="12" fill="none" stroke="var(--paper)" stroke-width="1.5" opacity="0.5"/>
+        <rect x="55" y="50" width="95" height="12" fill="var(--ink-teal)" opacity="0.7"/>
+        <rect x="340" y="50" width="130" height="12" fill="none" stroke="var(--paper)" stroke-width="1.5" opacity="0.5"/>
+        <rect x="340" y="50" width="70" height="12" fill="var(--ink-red)" opacity="0.7"/>
+        <!-- Creature left (misreg) -->
+        <polygon points="100,90 138,65 176,82 182,128 158,158 100,152 72,128" fill="var(--ink-red)" opacity="0.35" transform="translate(3,3)"/>
+        <!-- Creature left -->
+        <polygon points="100,90 138,65 176,82 182,128 158,158 100,152 72,128" fill="var(--ink-teal)" opacity="0.95"/>
+        <polygon points="72,152 90,178 100,152" fill="var(--ink-teal)" opacity="0.75"/>
+        <polygon points="158,158 175,182 182,158" fill="var(--ink-teal)" opacity="0.75"/>
+        <circle cx="114" cy="102" r="7" fill="var(--paper)" opacity="0.9"/>
+        <circle cx="152" cy="99" r="7" fill="var(--paper)" opacity="0.9"/>
+        <circle cx="114" cy="102" r="3" fill="var(--ink-black)"/>
+        <circle cx="152" cy="99" r="3" fill="var(--ink-black)"/>
+        <!-- Creature right (misreg) -->
+        <polygon points="425,90 387,65 349,82 343,128 367,158 425,152 453,128" fill="var(--ink-red)" opacity="0.35" transform="translate(3,3)"/>
+        <!-- Creature right -->
+        <polygon points="425,90 387,65 349,82 343,128 367,158 425,152 453,128" fill="var(--ink-red)" opacity="0.95"/>
+        <polygon points="453,152 435,178 425,152" fill="var(--ink-red)" opacity="0.75"/>
+        <polygon points="367,158 350,182 343,158" fill="var(--ink-red)" opacity="0.75"/>
+        <circle cx="411" cy="102" r="7" fill="var(--paper)" opacity="0.9"/>
+        <circle cx="373" cy="99" r="7" fill="var(--paper)" opacity="0.9"/>
+        <circle cx="411" cy="102" r="3" fill="var(--ink-black)"/>
+        <circle cx="373" cy="99" r="3" fill="var(--ink-black)"/>
+        <!-- Lightning bolt misreg -->
+        <polygon points="275,60 248,132 270,132 232,210 295,128 268,128 300,60" fill="var(--ink-red)" opacity="0.3" transform="translate(4,0)"/>
+        <!-- Lightning bolt -->
+        <polygon points="275,60 248,132 270,132 232,210 295,128 268,128 300,60" fill="var(--ink-yellow)" opacity="0.95"/>
+        <!-- Math symbols -->
+        <text x="200" y="110" font-family="IBM Plex Mono" font-size="26" fill="var(--paper)" opacity="0.4" transform="rotate(-12,200,110)">×</text>
+        <text x="340" y="90" font-family="IBM Plex Mono" font-size="20" fill="var(--paper)" opacity="0.35" transform="rotate(8,340,90)">÷</text>
+        <text x="175" y="210" font-family="IBM Plex Mono" font-size="22" fill="var(--paper)" opacity="0.3" transform="rotate(5,175,210)">%</text>
+        <text x="340" y="215" font-family="IBM Plex Mono" font-size="22" fill="var(--paper)" opacity="0.35" transform="rotate(-8,340,215)">=</text>
+        <text x="60" y="280" font-family="IBM Plex Mono" font-size="18" fill="var(--paper)" opacity="0.2" transform="rotate(15,60,280)">+</text>
+        <text x="450" y="280" font-family="IBM Plex Mono" font-size="18" fill="var(--paper)" opacity="0.2" transform="rotate(-10,450,280)">∑</text>
+      </svg>
+    </div>
+  </div>
+  <div class="torn-divider">
+    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0,0 L0,20 Q30,40 60,22 Q90,5 120,28 Q150,40 180,18 Q210,0 240,25 Q270,40 300,15 Q330,0 360,30 Q390,40 420,12 Q450,0 480,28 Q510,40 540,18 Q570,0 600,25 Q630,40 660,10 Q690,0 720,30 Q750,40 780,15 Q810,0 840,28 Q870,40 900,18 Q930,2 960,25 Q990,40 1020,15 Q1050,0 1080,28 Q1110,40 1140,18 Q1170,0 1200,25 Q1230,40 1260,15 Q1290,0 1320,28 Q1350,40 1380,20 Q1410,5 1440,22 L1440,40 L0,40 Z" fill="var(--paper)"/></svg>
+  </div>
+</section>
+
+<div class="project-content-wrap">
+  <main class="project-main">
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-black);">// Overview</span>
+      <p>For competitive battling communities, damage calculators are the spreadsheets of strategy — every serious player uses one, and their accuracy is non-negotiable. This Battle Calculator lets users input two entities with customizable base stats (HP, Attack, Defense, Speed, Special Attack/Defense), select an "attack" with power and type, and instantly see the damage output — including minimum/maximum rolls, type effectiveness multipliers, and whether the attack is a guaranteed one-hit.</p>
+      <p>The project was built with a laser focus on two things: mathematical correctness and testability. Every formula is extracted into a pure function, and every pure function has a battery of unit tests with known expected outputs.</p>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-black);">// What I Built</span>
+      <ul class="project-bullet-list">
+        <li><span style="color:var(--ink-teal)">›</span> A complete damage formula engine in C# covering: base damage, type effectiveness chart (18×18 types), STAB multiplier, critical hit probability, and random roll range.</li>
+        <li><span style="color:var(--ink-teal)">›</span> A full NUnit test suite: 47 unit tests covering normal damage cases, edge cases (0 damage type immunity), multi-hit moves, and critical hit scenarios. All 47 pass.</li>
+        <li><span style="color:var(--ink-teal)">›</span> A web frontend with stat input fields, move type selector (color-coded type badges), and an output panel showing expected damage, damage range, type effectiveness label, and a visual HP bar.</li>
+        <li><span style="color:var(--ink-teal)">›</span> Input validation preventing negative stats, stat totals above logical maximums, and zero-power moves.</li>
+      </ul>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-black);">// What I Learned</span>
+      <p>Unit testing stopped being an abstract best practice and became a concrete lifesaver on this project. The damage formula has six compounding multipliers — catching a bug in the type effectiveness lookup was only possible because the failing test output told me exactly which case broke. Without tests, that bug would have been invisible.</p>
+      <p>C#'s strong type system proved its value. Modeling types as enums rather than strings eliminated an entire class of potential bugs — the compiler would reject a typo in a type name, where a string comparison would silently fail.</p>
+    </div>
+  </main>
+  <aside class="project-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-accent" style="background: var(--ink-black);"></div>
+      <div class="sidebar-inner">
+        <span class="sidebar-label">// Project Info</span>
+        <div class="sidebar-row"><span class="sidebar-key">Type</span><span class="sidebar-val">Web Tool / Game Utility</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Stack</span><span class="sidebar-val">C#, .NET, NUnit</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Status</span><span class="sidebar-val">Completed</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Year</span><span class="sidebar-val">2025</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Focus</span><span class="sidebar-val">Rule Logic · Math Accuracy · Unit Testing</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<section class="project-challenge">
+  <div class="project-challenge-inner">
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-teal);">// The Challenge</span>
+      <p>Representing the full type effectiveness chart efficiently — 18×18 = 324 relationships — without hard-coding 324 conditional statements.</p>
+      <div class="challenge-divider"></div>
+    </div>
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-yellow);">// The Approach</span>
+      <p>Stored the chart as a 2D array indexed by two enums cast to int. The entire type chart loads once at startup. Lookups are O(1) array accesses. Adding a new type is one row+column addition, not a code rewrite.</p>
+    </div>
+  </div>
+</section>
+
+<section class="project-tech">
+  <div class="tech-inner">
+    <span class="tech-label">// Tech Stack</span>
+    <div class="tech-row">
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><text x="5" y="24" font-family="IBM Plex Mono" font-size="16" font-weight="bold" fill="var(--ink-teal)">C#</text></svg>C#</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><rect x="4" y="10" width="28" height="20" fill="none" stroke="var(--ink-black)" stroke-width="2"/><text x="6" y="24" font-family="IBM Plex Mono" font-size="8" fill="var(--ink-black)">.NET</text></svg>.NET</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" fill="none" stroke="var(--ink-red)" stroke-width="2"/><text x="11" y="22" font-family="IBM Plex Mono" font-size="8" fill="var(--ink-red)">✓</text></svg>NUnit</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><path d="M8,28 L8,8 L28,28 L28,8" stroke="var(--ink-black)" stroke-width="2" fill="none"/></svg>Type Chart</div>
+    </div>
+  </div>
+</section>
+
+<div class="project-back-wrap">
+  <a href="../index.html" class="project-back-btn stamp-hover">← View All Projects</a>
+</div>
+<footer class="main-footer">R. Abraham Albert © 2025 — Built with Code, Ink &amp; Stubbornness.</footer>
+</body>
+</html>

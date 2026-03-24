@@ -1,0 +1,231 @@
+/* ════════════════════════════════
+   PROJECTS PAGE (index.html)
+   ════════════════════════════════ */
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink-black);
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E");
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hero-red-block {
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  width: 480px;
+  height: 180px;
+  background: var(--ink-red);
+  opacity: 0.15;
+  pointer-events: none;
+  transform: translateX(-6px) translateY(4px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 80px 60px;
+}
+
+.hero-label {
+  color: var(--ink-teal);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.hero-heading {
+  font-family: 'Abril Fatface', serif;
+  font-size: 72px;
+  color: var(--paper);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero-scratch {
+  position: relative;
+  display: inline-block;
+}
+
+.scratch-underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  display: block;
+}
+
+.scratch-underline svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--paper);
+  opacity: 0.75;
+  margin-top: 12px;
+  letter-spacing: 0.08em;
+}
+
+.torn-divider {
+  width: 100%;
+  display: block;
+  line-height: 0;
+  margin-top: -2px;
+}
+
+/* ── PROJECTS SECTION ── */
+.projects-section {
+  background: var(--paper);
+  padding: 60px 0 80px;
+  position: relative;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.section-label {
+  color: var(--ink-black);
+}
+
+/* ── GRID ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* ── PROJECT CARD ── */
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid var(--ink-black);
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: -3px -3px 0 0 var(--ink-black);
+}
+
+.project-card:hover .card-cover::after {
+  opacity: 0.3;
+}
+
+.card-cover {
+  flex: 0 0 55%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.6) 1.5px, transparent 1.5px);
+  background-size: 6px 6px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.card-body {
+  flex: 0 0 45%;
+  background: var(--paper-dark);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.card-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--ink-black) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.card-number {
+  color: var(--ink-black);
+  opacity: 0.5;
+}
+
+.card-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 22px;
+  color: var(--ink-black);
+  line-height: 1.2;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 4px 0;
+}
+
+.card-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-red);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* Center the 5th card */
+.card-centered {
+  grid-column: 1 / -1;
+  max-width: 580px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero-content { padding: 0 24px 40px; }
+  .hero-heading { font-size: 42px; }
+  .hero-red-block { display: none; }
+  .projects-container { padding: 0 20px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 28px; }
+  .project-card { height: auto; }
+  .card-cover { min-height: 200px; }
+}

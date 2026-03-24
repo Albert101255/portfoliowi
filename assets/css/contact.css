@@ -1,0 +1,196 @@
+/* ════════════════════════════════
+   CONTACT PAGE
+   ════════════════════════════════ */
+
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+.contact-main {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 140px);
+  position: relative;
+}
+
+/* LEFT */
+.contact-left {
+  width: 55%;
+  background: var(--ink-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E");
+}
+
+.contact-left-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 60px;
+}
+
+.contact-heading {
+  font-family: 'Abril Fatface', serif;
+  font-size: 68px;
+  color: var(--paper);
+  line-height: 1.0;
+  margin-bottom: 28px;
+}
+
+.touch-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.touch-highlight {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: calc(100% + 12px);
+  height: 100%;
+  background: var(--ink-red);
+  opacity: 0.35;
+  transform: translate(3px, 4px);
+}
+
+.contact-body {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  color: var(--paper);
+  opacity: 0.72;
+  line-height: 1.8;
+  max-width: 420px;
+  letter-spacing: 0.04em;
+  margin-bottom: 50px;
+}
+
+.contact-deco {
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  opacity: 0.85;
+}
+
+/* DIVIDER */
+.contact-divider {
+  width: 3px;
+  background: var(--ink-black);
+  flex-shrink: 0;
+}
+
+/* RIGHT */
+.contact-right {
+  width: 45%;
+  background: var(--paper-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--ink-black) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.contact-right-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* CONTACT CARDS */
+.contact-card {
+  display: flex;
+  align-items: center;
+  height: 88px;
+  border: 2px solid var(--ink-black);
+  background: var(--paper);
+  text-decoration: none;
+  color: var(--ink-black);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+  position: relative;
+}
+
+.contact-card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: -3px -3px 0 0 var(--ink-black);
+  background: var(--ink-red);
+  color: var(--paper);
+}
+
+.contact-card:hover .contact-card-label,
+.contact-card:hover .contact-card-value { color: var(--paper); }
+
+.contact-card:hover .contact-card-arrow svg path { stroke: var(--paper); }
+
+.contact-card-icon {
+  width: 60px;
+  height: 100%;
+  flex-shrink: 0;
+  background: var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card-body {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-card-label {
+  color: var(--ink-black);
+  opacity: 0.5;
+  font-size: 10px;
+  transition: color 0.12s;
+}
+
+.contact-card-value {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  color: var(--ink-black);
+  transition: color 0.12s;
+}
+
+.contact-card-arrow {
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+.contact-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-black);
+  opacity: 0.4;
+  line-height: 1.6;
+  margin-top: auto;
+  letter-spacing: 0.04em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .contact-main { flex-direction: column; }
+  .contact-left { width: 100%; }
+  .contact-right { width: 100%; }
+  .contact-divider { width: 100%; height: 3px; }
+  .contact-left-inner { padding: 40px 24px; }
+  .contact-heading { font-size: 48px; }
+  .contact-right-inner { padding: 40px 24px; }
+  .contact-deco { display: none; }
+}

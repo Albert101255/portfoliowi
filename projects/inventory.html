@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory System — R. Abraham Albert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/risograph.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+
+<script src="../assets/js/header.js"></script>
+<script>injectHeader('projects');</script>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<section class="project-hero" style="background: var(--ink-red);">
+  <div class="project-hero-inner">
+    <div>
+      <span class="project-number-label" style="color: var(--paper); opacity:0.7;">Project 02</span>
+      <h1 class="project-hero-title" style="color: var(--paper);">Multi-Platform Inventory Management System</h1>
+      <p class="project-hero-tagline" style="color: var(--paper);">A full-stack CRUD web application with real-time stock dashboards</p>
+    </div>
+    <div class="project-hero-art">
+      <svg viewBox="0 0 520 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="340" fill="var(--ink-red)"/>
+        <!-- Browser misreg -->
+        <rect x="53" y="43" width="310" height="220" rx="4" fill="var(--ink-black)" opacity="0.3"/>
+        <!-- Browser -->
+        <rect x="50" y="40" width="310" height="220" rx="4" fill="var(--paper)" stroke="var(--ink-black)" stroke-width="3"/>
+        <rect x="50" y="40" width="310" height="28" rx="4" fill="var(--paper-dark)" stroke="var(--ink-black)" stroke-width="2"/>
+        <circle cx="68" cy="54" r="5" fill="var(--ink-red)"/>
+        <circle cx="84" cy="54" r="5" fill="var(--ink-yellow)"/>
+        <circle cx="100" cy="54" r="5" fill="var(--ink-teal)"/>
+        <!-- Bars -->
+        <rect x="70" y="165" width="30" height="60" fill="var(--ink-teal)" opacity="0.9"/>
+        <rect x="110" y="135" width="30" height="90" fill="var(--ink-black)" opacity="0.8"/>
+        <rect x="150" y="150" width="30" height="75" fill="var(--ink-teal)" opacity="0.7"/>
+        <line x1="65" y1="225" x2="195" y2="225" stroke="var(--ink-black)" stroke-width="1.5" opacity="0.6"/>
+        <!-- Table -->
+        <rect x="205" y="75" width="140" height="140" fill="none" stroke="var(--ink-black)" stroke-width="1.5"/>
+        <rect x="205" y="75" width="140" height="25" fill="var(--ink-black)" opacity="0.08"/>
+        <line x1="205" y1="100" x2="345" y2="100" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="205" y1="125" x2="345" y2="125" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="205" y1="150" x2="345" y2="150" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="205" y1="175" x2="345" y2="175" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="205" y1="200" x2="345" y2="200" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="260" y1="75" x2="260" y2="215" stroke="var(--ink-black)" stroke-width="1"/>
+        <line x1="305" y1="75" x2="305" y2="215" stroke="var(--ink-black)" stroke-width="1"/>
+        <!-- Game icons -->
+        <text x="395" y="115" font-size="40" fill="var(--ink-yellow)" opacity="0.9">🎮</text>
+        <text x="420" y="220" font-size="32" fill="var(--ink-yellow)" opacity="0.9">🎲</text>
+      </svg>
+    </div>
+  </div>
+  <div class="torn-divider">
+    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0,0 L0,20 Q30,40 60,22 Q90,5 120,28 Q150,40 180,18 Q210,0 240,25 Q270,40 300,15 Q330,0 360,30 Q390,40 420,12 Q450,0 480,28 Q510,40 540,18 Q570,0 600,25 Q630,40 660,10 Q690,0 720,30 Q750,40 780,15 Q810,0 840,28 Q870,40 900,18 Q930,2 960,25 Q990,40 1020,15 Q1050,0 1080,28 Q1110,40 1140,18 Q1170,0 1200,25 Q1230,40 1260,15 Q1290,0 1320,28 Q1350,40 1380,20 Q1410,5 1440,22 L1440,40 L0,40 Z" fill="var(--paper)"/></svg>
+  </div>
+</section>
+
+<div class="project-content-wrap">
+  <main class="project-main">
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-red);">// Overview</span>
+      <p>Every business tracks things — products, stock, orders, people. The Inventory Management System is a full-stack web application built around the real-world scenario of a "Game Store" — a fictional retailer stocking physical game copies, controllers, and accessories. The platform provides a clean dashboard where staff can add, edit, search, and delete inventory items, with live-updating stock level charts that give an at-a-glance warehouse overview.</p>
+      <p>The system is built on a React frontend communicating with a Node.js/Express backend API, backed by a MongoDB database. This project was a deliberate exercise in learning the full journey of data — from a MongoDB document, through an Express REST endpoint, fetched by React's state management, and finally rendered as a chart using Chart.js.</p>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-red);">// What I Built</span>
+      <ul class="project-bullet-list">
+        <li><span style="color:var(--ink-red)">›</span> A React SPA with full CRUD UI: item creation form, edit-in-place rows, delete confirmation modal, and search/filter bar.</li>
+        <li><span style="color:var(--ink-red)">›</span> A RESTful Express API with five endpoints: GET /items, POST /items, PUT /items/:id, DELETE /items/:id, GET /items/stats.</li>
+        <li><span style="color:var(--ink-red)">›</span> MongoDB schema with Mongoose for item validation (name, SKU, category, quantity, reorder threshold).</li>
+        <li><span style="color:var(--ink-red)">›</span> A dashboard view with Chart.js bar/doughnut charts showing stock distribution by category and low-stock alerts.</li>
+        <li><span style="color:var(--ink-red)">›</span> Custom SVG icons for item categories, created in Krita and exported for the web.</li>
+      </ul>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-red);">// What I Learned</span>
+      <p>State management in React becomes genuinely complex the moment CRUD operations must stay in sync with a remote database. This project was where the patterns of optimistic UI updates versus re-fetching-from-server became a real design decision with real trade-offs, not just a theoretical concept.</p>
+      <p>MongoDB's schema-less flexibility turned out to be a double-edged sword — early iterations had inconsistent document shapes that caused subtle frontend bugs. Adding Mongoose schema validation was the decisive fix and taught a lasting lesson about enforcing structure at the data layer regardless of database flexibility.</p>
+    </div>
+  </main>
+  <aside class="project-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-accent" style="background: var(--ink-red);"></div>
+      <div class="sidebar-inner">
+        <span class="sidebar-label">// Project Info</span>
+        <div class="sidebar-row"><span class="sidebar-key">Type</span><span class="sidebar-val">Web Application</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Stack</span><span class="sidebar-val">React, Node.js, Express, MongoDB</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Status</span><span class="sidebar-val">Completed</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Year</span><span class="sidebar-val">2025</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Focus</span><span class="sidebar-val">Full-Stack · CRUD · Database Design</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<section class="project-challenge">
+  <div class="project-challenge-inner">
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-red);">// The Challenge</span>
+      <p>Building charts that update without full page refresh when inventory data changes — keeping the chart in sync with the table view in real-time.</p>
+      <div class="challenge-divider"></div>
+    </div>
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-yellow);">// The Approach</span>
+      <p>Lifted the inventory state to the top-level React context, making both the table and the chart derive from the same source of truth. When any CRUD operation resolves, it triggers a single context re-render that updates both views simultaneously — no separate fetch calls for the chart.</p>
+    </div>
+  </div>
+</section>
+
+<section class="project-tech">
+  <div class="tech-inner">
+    <span class="tech-label">// Tech Stack</span>
+    <div class="tech-row">
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><text x="2" y="24" font-family="IBM Plex Mono" font-size="14" font-weight="bold" fill="var(--ink-teal)">⚛️</text></svg>React</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" fill="none" stroke="var(--ink-teal)" stroke-width="2"/><text x="11" y="22" font-family="IBM Plex Mono" font-size="10" fill="var(--ink-teal)">JS</text></svg>Node.js</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><rect x="6" y="8" width="24" height="20" rx="3" fill="none" stroke="var(--ink-red)" stroke-width="2"/><text x="10" y="22" font-family="IBM Plex Mono" font-size="9" fill="var(--ink-red)">API</text></svg>Express</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="12" rx="12" ry="5" fill="none" stroke="var(--ink-teal)" stroke-width="2"/><path d="M6,12 L6,24 Q6,29 18,29 Q30,29 30,24 L30,12" stroke="var(--ink-teal)" stroke-width="2" fill="none"/></svg>MongoDB</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="14" height="20" fill="none" stroke="var(--ink-black)" stroke-width="2"/><rect x="18" y="14" width="14" height="14" fill="none" stroke="var(--ink-black)" stroke-width="2"/></svg>Chart.js</div>
+    </div>
+  </div>
+</section>
+
+<div class="project-back-wrap">
+  <a href="../index.html" class="project-back-btn stamp-hover">← View All Projects</a>
+</div>
+<footer class="main-footer">R. Abraham Albert © 2025 — Built with Code, Ink &amp; Stubbornness.</footer>
+</body>
+</html>

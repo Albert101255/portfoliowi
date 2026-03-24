@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplayer Prototype — R. Abraham Albert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/risograph.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+<script src="../assets/js/header.js"></script>
+<script>injectHeader('projects');</script>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<section class="project-hero" style="background: var(--ink-teal);">
+  <div class="project-hero-inner">
+    <div>
+      <span class="project-number-label" style="color: var(--paper); opacity:0.7;">Project 05</span>
+      <h1 class="project-hero-title" style="color: var(--paper);">Multiplayer Mini-Game Prototype</h1>
+      <p class="project-hero-tagline" style="color: var(--paper); opacity: 0.8;">A networked Unreal Engine 5 obstacle course with C++ AI enemies</p>
+    </div>
+    <div class="project-hero-art">
+      <svg viewBox="0 0 520 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="340" fill="var(--ink-teal)"/>
+        <!-- BG halftone -->
+        <circle cx="50" cy="70" r="5" fill="var(--ink-black)" opacity="0.13"/>
+        <circle cx="130" cy="30" r="3" fill="var(--ink-black)" opacity="0.1"/>
+        <circle cx="450" cy="290" r="6" fill="var(--ink-black)" opacity="0.1"/>
+        <circle cx="490" cy="70" r="4" fill="var(--ink-black)" opacity="0.12"/>
+        <circle cx="30" cy="250" r="4" fill="var(--ink-black)" opacity="0.1"/>
+        <!-- Platforms -->
+        <rect x="40" y="258" width="220" height="28" fill="var(--paper)" opacity="0.95" stroke="var(--ink-black)" stroke-width="2.5"/>
+        <rect x="300" y="218" width="180" height="28" fill="var(--paper)" opacity="0.95" stroke="var(--ink-black)" stroke-width="2.5"/>
+        <rect x="145" y="175" width="120" height="24" fill="var(--paper)" opacity="0.9" stroke="var(--ink-black)" stroke-width="2"/>
+        <rect x="380" y="148" width="120" height="22" fill="var(--paper)" opacity="0.85" stroke="var(--ink-black)" stroke-width="2"/>
+        <rect x="70" y="110" width="90" height="20" fill="var(--paper)" opacity="0.85" stroke="var(--ink-black)" stroke-width="2"/>
+        <rect x="290" y="88" width="90" height="20" fill="var(--paper)" opacity="0.8" stroke="var(--ink-black)" stroke-width="2"/>
+        <rect x="150" y="60" width="80" height="18" fill="var(--paper)" opacity="0.75" stroke="var(--ink-black)" stroke-width="2"/>
+        <!-- Player misreg -->
+        <circle cx="173" cy="235" r="18" fill="var(--ink-red)" opacity="0.35" transform="translate(3,3)"/>
+        <!-- Player -->
+        <circle cx="173" cy="235" r="18" fill="var(--ink-yellow)" opacity="0.98" stroke="var(--ink-black)" stroke-width="2"/>
+        <polygon points="173,217 186,232 173,226" fill="var(--ink-black)" opacity="0.65"/>
+        <!-- Enemy misreg -->
+        <rect x="375" y="188" width="35" height="26" rx="4" fill="var(--ink-red)" opacity="0.35" transform="translate(3,3)"/>
+        <!-- Enemy -->
+        <rect x="375" y="188" width="35" height="26" rx="4" fill="var(--ink-red)" opacity="0.95" stroke="var(--ink-black)" stroke-width="2"/>
+        <rect x="381" y="193" width="8" height="6" fill="var(--ink-black)" opacity="0.7"/>
+        <rect x="396" y="193" width="8" height="6" fill="var(--ink-black)" opacity="0.7"/>
+        <!-- ! -->
+        <text x="384" y="183" font-family="IBM Plex Mono" font-size="18" font-weight="bold" fill="var(--ink-yellow)">!</text>
+        <!-- Stars -->
+        <text x="270" y="250" font-size="20" fill="var(--ink-yellow)">★</text>
+        <text x="470" y="210" font-size="14" fill="var(--ink-yellow)" opacity="0.9">★</text>
+        <text x="180" y="140" font-size="11" fill="var(--ink-yellow)" opacity="0.8">★</text>
+        <text x="80" y="250" font-size="16" fill="var(--ink-yellow)" opacity="0.8">★</text>
+        <!-- HP bar UI -->
+        <rect x="30" y="25" width="90" height="14" fill="none" stroke="var(--paper)" stroke-width="1.5" opacity="0.8"/>
+        <rect x="30" y="25" width="62" height="14" fill="var(--ink-yellow)" opacity="0.65"/>
+        <!-- Score -->
+        <text x="140" y="38" font-family="IBM Plex Mono" font-size="11" fill="var(--paper)" opacity="0.8">SCORE: 1420</text>
+        <!-- Timer -->
+        <text x="390" y="38" font-family="IBM Plex Mono" font-size="11" fill="var(--paper)" opacity="0.8">02:34</text>
+      </svg>
+    </div>
+  </div>
+  <div class="torn-divider">
+    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0,0 L0,20 Q30,40 60,22 Q90,5 120,28 Q150,40 180,18 Q210,0 240,25 Q270,40 300,15 Q330,0 360,30 Q390,40 420,12 Q450,0 480,28 Q510,40 540,18 Q570,0 600,25 Q630,40 660,10 Q690,0 720,30 Q750,40 780,15 Q810,0 840,28 Q870,40 900,18 Q930,2 960,25 Q990,40 1020,15 Q1050,0 1080,28 Q1110,40 1140,18 Q1170,0 1200,25 Q1230,40 1260,15 Q1290,0 1320,28 Q1350,40 1380,20 Q1410,5 1440,22 L1440,40 L0,40 Z" fill="var(--paper)"/></svg>
+  </div>
+</section>
+
+<div class="project-content-wrap">
+  <main class="project-main">
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-teal);">// Overview</span>
+      <p>Unreal Engine with C++ gameplay code is the standard in AAA game development, and this prototype was built specifically to move beyond Blueprint drag-and-drop and into the engine's actual programming layer. The result is a networked third-person obstacle course prototype: players navigate a gauntlet of physics obstacles and encounter basic enemy AI that patrols, detects the player, and gives chase.</p>
+      <p>The prototype supports 2-player local split-screen. Each player has a character controller written in C++, a health system, a checkpoint system, and a time-attack scoring screen at the end. Enemy AI is implemented via Unreal's Behavior Tree system, driven by a custom C++ BTTaskNode for the patrol path logic.</p>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-teal);">// What I Built</span>
+      <ul class="project-bullet-list">
+        <li><span style="color:var(--ink-teal)">›</span> C++ ACharacter subclass with full movement (walk, run, jump, crouch) and a health component written as a C++ UActorComponent.</li>
+        <li><span style="color:var(--ink-teal)">›</span> Three obstacle types: rotating platforms (Blueprint-driven physics), timed pressure plates (C++ trigger overlap events), and projectile launchers (C++ spawn actor with initial velocity).</li>
+        <li><span style="color:var(--ink-teal)">›</span> Basic enemy AI: an AAIController with a Behavior Tree containing patrol, detect-player, and chase states. The patrol path uses custom C++ UBTTaskNode_Patrol that reads waypoints from ATargetPoint actors.</li>
+        <li><span style="color:var(--ink-teal)">›</span> Local multiplayer: Unreal's built-in split-screen with separate APlayerController instances. Both players share the same level stream — tested stable at 120FPS in-editor.</li>
+        <li><span style="color:var(--ink-teal)">›</span> A simple UI (UMG widget) showing per-player health and a countdown timer, updated via C++ TBroadcast delegate.</li>
+      </ul>
+    </div>
+    <div class="project-section">
+      <span class="project-section-label" style="color: var(--ink-teal);">// What I Learned</span>
+      <p>Unreal's C++ layer is not beginner-friendly — understanding the distinction between UObject, AActor, APawn, ACharacter, and when to use each was the first 30% of the project's learning curve. The engine's macro system (UPROPERTY, UFUNCTION, GENERATED_BODY()) felt like magic until reading the generated header files and understanding what the Unreal Header Tool actually produces.</p>
+      <p>The biggest insight: game feel is not code, it's numbers. The difference between "floaty jump" and "satisfying jump" was entirely in the JumpZVelocity and GravityScale values — no code changes required. Playtesting versus tweaking parameters was a session unto itself.</p>
+    </div>
+  </main>
+  <aside class="project-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-accent" style="background: var(--ink-teal);"></div>
+      <div class="sidebar-inner">
+        <span class="sidebar-label">// Project Info</span>
+        <div class="sidebar-row"><span class="sidebar-key">Type</span><span class="sidebar-val">Game Prototype</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Stack</span><span class="sidebar-val">Unreal Engine 5, C++, Blueprints</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Status</span><span class="sidebar-val">Completed</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Year</span><span class="sidebar-val">2025</span></div>
+        <div class="sidebar-row"><span class="sidebar-key">Focus</span><span class="sidebar-val">Game Feel · AI Behavior · C++ Gameplay</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<section class="project-challenge">
+  <div class="project-challenge-inner">
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-teal);">// The Challenge</span>
+      <p>Getting the enemy AI to feel "fair" — enemies that are too precise feel unfair; enemies with a delay feel dumb. Finding the sweet spot required careful tuning of the perception component's detection radius and sight angle.</p>
+      <div class="challenge-divider"></div>
+    </div>
+    <div class="challenge-col">
+      <span class="challenge-label" style="color: var(--ink-yellow);">// The Approach</span>
+      <p>Used Unreal's UAIPerceptionComponent with a sight sense configured to a 90-degree forward arc and 1200cm detection range, with a 0.3-second reaction delay before entering chase state. The reaction delay is implemented as a Blueprint delay node on the behavior tree branch — intentionally done in Blueprint to make it designer-adjustable without recompiling C++.</p>
+    </div>
+  </div>
+</section>
+
+<section class="project-tech">
+  <div class="tech-inner">
+    <span class="tech-label">// Tech Stack</span>
+    <div class="tech-row">
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><text x="2" y="24" font-family="IBM Plex Mono" font-size="14" font-weight="bold" fill="var(--ink-black)">UE5</text></svg>Unreal 5</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><text x="2" y="24" font-family="IBM Plex Mono" font-size="15" font-weight="bold" fill="var(--ink-black)">C++</text></svg>C++</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><rect x="4" y="4" width="12" height="12" fill="var(--ink-teal)" opacity="0.8"/><rect x="20" y="4" width="12" height="12" fill="var(--ink-teal)" opacity="0.6"/><rect x="4" y="20" width="12" height="12" fill="var(--ink-teal)" opacity="0.6"/><line x1="16" y1="10" x2="20" y2="10" stroke="var(--ink-black)" stroke-width="1.5"/><line x1="10" y1="16" x2="10" y2="20" stroke="var(--ink-black)" stroke-width="1.5"/></svg>Blueprints</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="28" height="22" rx="2" fill="none" stroke="var(--ink-red)" stroke-width="2"/><line x1="4" y1="16" x2="32" y2="16" stroke="var(--ink-red)" stroke-width="1.5"/><text x="10" y="28" font-family="IBM Plex Mono" font-size="8" fill="var(--ink-red)">UMG</text></svg>UI / UMG</div>
+      <div class="tech-stamp"><svg viewBox="0 0 36 36" fill="none"><circle cx="10" cy="18" r="5" fill="var(--ink-black)" opacity="0.7"/><circle cx="26" cy="18" r="5" fill="var(--ink-red)" opacity="0.7"/><line x1="15" y1="18" x2="21" y2="18" stroke="var(--ink-black)" stroke-width="2"/></svg>AI / BT</div>
+    </div>
+  </div>
+</section>
+
+<div class="project-back-wrap">
+  <a href="../index.html" class="project-back-btn stamp-hover">← View All Projects</a>
+</div>
+<footer class="main-footer">R. Abraham Albert © 2025 — Built with Code, Ink &amp; Stubbornness.</footer>
+</body>
+</html>

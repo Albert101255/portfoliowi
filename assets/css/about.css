@@ -1,0 +1,356 @@
+/* ════════════════════════════════
+   ABOUT PAGE
+   ════════════════════════════════ */
+
+/* ── HERO ── */
+.about-hero {
+  background: var(--ink-black);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 80px 0;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E");
+}
+
+.about-hero-left { position: relative; z-index: 1; }
+.about-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-name {
+  font-family: 'Abril Fatface', serif;
+  font-size: 62px;
+  color: var(--paper);
+  line-height: 1.05;
+  margin: 12px 0 16px;
+}
+
+.period {
+  color: var(--ink-red);
+  font-size: 74px;
+}
+
+.about-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--paper);
+  opacity: 0.7;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.torn-divider {
+  grid-column: 1 / -1;
+  width: 100%;
+  line-height: 0;
+  display: block;
+  margin-top: 20px;
+}
+
+/* ── BIO SECTION ── */
+.about-bio {
+  background: var(--paper);
+  padding: 70px 0;
+}
+
+.about-bio-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.bio-left .label { color: var(--ink-red); margin-bottom: 20px; display: block; }
+
+.bio-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: var(--ink-black);
+}
+
+.pull-quote {
+  margin-top: 40px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.quote-mark {
+  font-family: 'Abril Fatface', serif;
+  font-size: 120px;
+  color: var(--ink-yellow);
+  line-height: 0.8;
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  opacity: 0.9;
+}
+
+.quote-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-black);
+  display: block;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info Card */
+.info-card {
+  border: 2px solid var(--ink-black);
+  padding: 28px;
+  background: var(--paper-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card-halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--ink-black) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ink-black);
+  opacity: 0.9;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-black);
+  opacity: 0.5;
+}
+
+.info-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blink-dot {
+  color: var(--ink-teal);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.1; }
+}
+
+/* ── EDUCATION ── */
+.about-education {
+  background: var(--paper-dark);
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-stripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background-image: radial-gradient(circle, var(--ink-teal) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  opacity: 0.25;
+}
+
+.about-edu-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--ink-black);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 48px;
+  padding-left: 30px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-marker {
+  position: absolute;
+  left: -49px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: var(--ink-red);
+  border: 2px solid var(--ink-black);
+  border-radius: 50%;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: var(--paper);
+  border-radius: 50%;
+}
+
+.timeline-year {
+  color: var(--ink-black);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.timeline-inst {
+  font-family: 'Abril Fatface', serif;
+  font-size: 20px;
+  color: var(--ink-black);
+  margin-bottom: 8px;
+}
+
+.timeline-detail {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-black);
+  opacity: 0.75;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+/* ── SKILLS ── */
+.about-skills {
+  background: var(--paper);
+  padding: 70px 0 0;
+}
+
+.about-skills-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.skill-card {
+  border: 2px solid var(--ink-black);
+  padding: 24px;
+  background: var(--paper-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--accent);
+}
+
+.skill-cat {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.skill-tags { display: flex; flex-wrap: wrap; }
+
+/* Ticker */
+.skills-ticker-wrap {
+  background: var(--ink-black);
+  overflow: hidden;
+  padding: 14px 0;
+  margin: 0 -80px;
+}
+
+.skills-ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+}
+
+.skills-ticker span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.33%); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .about-hero { grid-template-columns: 1fr; padding: 40px 24px 0; }
+  .about-hero-right { display: none; }
+  .about-name { font-size: 40px; }
+  .about-bio-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+  .about-edu-inner { padding: 0 24px; }
+  .about-skills-inner { padding: 0 24px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .skills-ticker-wrap { margin: 0 -24px; }
+}
+
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
