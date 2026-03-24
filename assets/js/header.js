@@ -1,10 +1,14 @@
 // Shared header component
 function injectHeader(activePage) {
+  // Detect if we're in a subfolder (e.g. /projects/) and set base path accordingly
+  const isSubdir = window.location.pathname.includes('/projects/');
+  const base = isSubdir ? '../' : '';
+
   const pages = ['projects', 'about', 'contact'];
   const links = {
-    projects: { label: 'Projects', href: '/index.html' },
-    about: { label: 'About', href: '/about.html' },
-    contact: { label: 'Contact', href: '/contact.html' },
+    projects: { label: 'Projects', href: base + 'index.html' },
+    about: { label: 'About', href: base + 'about.html' },
+    contact: { label: 'Contact', href: base + 'contact.html' },
   };
 
   const navItems = pages.map(p => {
@@ -22,7 +26,7 @@ function injectHeader(activePage) {
   const header = `
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="/index.html" class="wordmark mis-reg" data-text="A.ALBERT">A.ALBERT</a>
+      <a href="${base}index.html" class="wordmark mis-reg" data-text="A.ALBERT">A.ALBERT</a>
       <nav class="main-nav" id="main-nav">
         ${navItems}
       </nav>
